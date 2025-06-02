@@ -12,6 +12,9 @@ connectDB()
         app.listen(port, () => {
             console.log(`Your App is Running at http://localhost:${port}`);
         });
+        app.get("/", (req, res) => {
+            res.send("Hello, Express!");
+        });
     })
     .catch((err) => {
         console.log("connection failed with mongodb", err);
